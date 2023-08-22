@@ -1,27 +1,21 @@
 package lightsout;
-import java.awt.Color;
 
 import javax.swing.JButton;
 
-public class Button extends JButton{
+public class Button extends JButton {
 	
 	private boolean estado;
 	
 	public Button() {
 		super("");
-		this.estado = false;
+		this.estado = false; //esto se tiene que randomizar!!!
 	}
 
 	public Button(String string) {
 		super(string);
 	}
 	
-	
-	void setColor(Color color) {
-		this.setBackground(color);
-	}
-	
-	void setEstado(Boolean b) {
+	void setEstado(Boolean b) { 
 		this.estado = b; 
 	}
 	
