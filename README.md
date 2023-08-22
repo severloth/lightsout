@@ -1,6 +1,6 @@
-# h1 LIGHTSOUT
+# LIGHTSOUT
 
-# h2 Universidad Nacional de General Sarmiento
-# h2 <Nombres>
+## Universidad Nacional de General Sarmiento
+## <Nombres>
 
 Proyecto para la facultad con el patrón Model-View-Presenter, realizado en Java 8.
