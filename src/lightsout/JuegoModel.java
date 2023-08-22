@@ -1,5 +1,6 @@
 package lightsout;
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class JuegoModel {
 	
@@ -19,5 +20,5 @@ public class JuegoModel {
 	public void randomizarEstados() {
 		
 	}
-
+	
 }

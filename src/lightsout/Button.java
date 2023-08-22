@@ -6,20 +6,30 @@ public class Button extends JButton {
 	
 	private boolean estado;
 	
-	public Button() {
+	private int indFila;
+	
+	private int indColumna;
+	
+	public Button(int fila, int columna) {
 		super("");
 		this.estado = false; //esto se tiene que randomizar!!!
-	}
-
-	public Button(String string) {
-		super(string);
+		this.indFila = fila;
+		this.indColumna = columna;
 	}
 	
-	void setEstado(Boolean b) { 
+	public void setEstado(Boolean b) { 
 		this.estado = b; 
 	}
 	
-	boolean getEstado() {
+	public boolean getEstado() {
 		return this.estado;
+	}
+	
+	public int getIndFila() {
+		return this.indFila;
+	}
+	
+	public int getIndColumna() {
+		return this.indColumna;
 	}
 }
