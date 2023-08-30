@@ -32,4 +32,8 @@ public class Button extends JButton {
 	public int getIndColumna() {
 		return this.indColumna;
 	}
+	
+	public void toggleEstado() {
+		this.estado = !this.estado;
+	}
 }

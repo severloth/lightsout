@@ -1,6 +1,6 @@
 # LIGHTSOUT
 
 ## Universidad Nacional de General Sarmiento
-## <Nombres>
+**Alumnos:** Mica, Facu, Luca.
 
-Proyecto para la facultad con el patrón Model-View-Presenter, realizado en Java 8.
+Proyecto para la facultad con el patrón *Model-View-Presenter*. Realizado en Java 17.
