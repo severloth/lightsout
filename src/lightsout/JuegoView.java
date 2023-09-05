@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class JuegoView {
@@ -28,10 +29,10 @@ public class JuegoView {
 	}
 
 	private void initialize() {
-		this.frame.setResizable(false); //si se hace mas grande el ejecutable queda horrible.
+		this.frame.setResizable(false); 
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.frame.getContentPane().setBackground(new Color(255, 255, 255));
-		this.frame.setBounds(100, 100, 984, 1023); //setear bounds segun el tamaño de pantalla (ver si se puede)
+		this.frame.setBounds(100, 100, 984, 1023);
 		iniciarMatriz();
 	}
 	
@@ -42,14 +43,14 @@ public class JuegoView {
 	        	Button boton = new Button(fila, columna);
 	        	boton.setBorderPainted(true);
 	        	boton.setBackground(new Color(219, 237, 220));
-	        	boton.setEstado(matrizRandom[fila][columna]); //setea los estados de los botones a los random recibidos.
+	        	boton.setEstado(matrizRandom[fila][columna]);
 	        	actualizarColor(boton);
 	        	this.matriz[fila][columna] = boton;
 	        	panel.add(boton);
 	        }
 	    }
-		this.panel.setLayout(new GridLayout(tamanioMatriz, tamanioMatriz)); //cambia la estructura de vista a Grid???
-		this.frame.getContentPane().add(panel); //le pego el panel al frame con los botones ya agregados.
+		this.panel.setLayout(new GridLayout(tamanioMatriz, tamanioMatriz));
+		this.frame.getContentPane().add(panel);
 		setListeners();
 	}
 	
@@ -58,7 +59,7 @@ public class JuegoView {
 	        Button boton = (Button) comp;
 	        boton.addActionListener(new ActionListener() {
 	    		public void actionPerformed(ActionEvent e) {
-	    			Button b = (Button) e.getSource(); //e.getSource trae el component que fue apretado. Se castea a Button para poder pasarselo al switchEstados.
+	    			Button b = (Button) e.getSource();
 	    			presenter.switchEstados(b);
 	    			actualizarEstados(presenter.getEstadoMatriz());
 	    		}
@@ -77,10 +78,19 @@ public class JuegoView {
 	
 	private void actualizarColor(Button b) {
 		if (b.getEstado()) {
-			b.setBackground(Color.decode(ColorEstado.APAGADO.getHexa()));
-		} else {
 			b.setBackground(Color.decode(ColorEstado.ENCENDIDO.getHexa()));
+		} else {
+			b.setBackground(Color.decode(ColorEstado.APAGADO.getHexa()));
 		}
+	}
+	
+	public void elJugadorGano() {
+		dibujarPantallaGanadora();
+	}
+	
+	private void dibujarPantallaGanadora() {
+		JOptionPane.showMessageDialog(null, "Ganaste!!!", "Felicidades!", JOptionPane.PLAIN_MESSAGE);
+		this.frame.dispose();
 	}
 	
 	public JPanel getPanel() {

@@ -13,6 +13,10 @@ public class JuegoPresenter {
 		model.switchEstadoFila(b.getIndFila(), b.getIndColumna());
 		model.switchEstadoColumna(b.getIndFila(), b.getIndColumna());
 		model.switchEstadoBoton(b.getIndFila(), b.getIndColumna());
+
+		if(model.verSiGano()) {
+			view.elJugadorGano();
+		}
 	}
 
 	public boolean[][] darMatrizRandomizada() {
