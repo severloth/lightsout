@@ -29,10 +29,11 @@ public class JuegoView {
 	}
 
 	private void initialize() {
+		this.frame.setSize(600, 600);
 		this.frame.setResizable(false); 
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.frame.getContentPane().setBackground(new Color(255, 255, 255));
-		this.frame.setBounds(100, 100, 984, 1023);
+		this.frame.setBounds(500, 200, 700, 700);
 		iniciarMatriz();
 	}
 	
