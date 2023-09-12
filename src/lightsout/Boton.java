@@ -2,7 +2,7 @@ package lightsout;
 
 import javax.swing.JButton;
 
-public class Button extends JButton {
+public class Boton extends JButton {
 	
 	private boolean estado;
 	
@@ -10,9 +10,9 @@ public class Button extends JButton {
 	
 	private int indColumna;
 	
-	public Button(int fila, int columna) {
+	public Boton(int fila, int columna) {
 		super("");
-		this.estado = false; //esto se tiene que randomizar!!!
+		this.estado = false;
 		this.indFila = fila;
 		this.indColumna = columna;
 	}

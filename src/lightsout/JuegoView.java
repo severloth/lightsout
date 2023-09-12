@@ -13,14 +13,14 @@ import javax.swing.JPanel;
 public class JuegoView {
 	private JFrame frame;
 	private int tamanioMatriz;
-	private Button[][] matriz;
+	private Boton[][] matriz;
 	private JPanel panel; 
 	private JuegoPresenter presenter;
 
 
 	public JuegoView(JuegoPresenter presenter, int tamanioMatriz) {
 		this.tamanioMatriz = tamanioMatriz;
-		this.matriz = new Button[tamanioMatriz][tamanioMatriz];
+		this.matriz = new Boton[tamanioMatriz][tamanioMatriz];
 		this.frame = new JFrame();
 		this.panel = new JPanel();
 		this.presenter = presenter;
@@ -41,7 +41,7 @@ public class JuegoView {
 		boolean[][] matrizRandom = this.presenter.darMatrizRandomizada();
 		for(int fila = 0; fila < this.tamanioMatriz; fila++) {
 	        for(int columna = 0; columna < this.tamanioMatriz; columna++) {
-	        	Button boton = new Button(fila, columna);
+	        	Boton boton = new Boton(fila, columna);
 	        	boton.setBorderPainted(true);
 	        	boton.setBackground(new Color(219, 237, 220));
 	        	boton.setEstado(matrizRandom[fila][columna]);
@@ -57,10 +57,10 @@ public class JuegoView {
 	
 	public void setListeners() {
 		for(Component comp : panel.getComponents()) {
-	        Button boton = (Button) comp;
+	        Boton boton = (Boton) comp;
 	        boton.addActionListener(new ActionListener() {
 	    		public void actionPerformed(ActionEvent e) {
-	    			Button b = (Button) e.getSource();
+	    			Boton b = (Boton) e.getSource();
 	    			presenter.switchEstados(b);
 	    			actualizarEstados(presenter.getEstadoMatriz());
 	    		}
@@ -77,7 +77,7 @@ public class JuegoView {
 	    }
 	}
 	
-	private void actualizarColor(Button b) {
+	private void actualizarColor(Boton b) {
 		if (b.getEstado()) {
 			b.setBackground(Color.decode(ColorEstado.ENCENDIDO.getHexa()));
 		} else {
@@ -102,7 +102,7 @@ public class JuegoView {
 		return this.frame;
 	}
 	
-	public Button[][] getMatriz() {
+	public Boton[][] getMatriz() {
 		return this.matriz;
 	}
 

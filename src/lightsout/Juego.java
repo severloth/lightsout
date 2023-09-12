@@ -13,7 +13,7 @@ public class Juego {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				
-				Selector selector = new Selector(); //definidor de tamaño
+				SelectorView selector = new SelectorView();
 				selector.getFrame().setVisible(true);
 				
 				selector.getBotonConfirmarSeleccion().addActionListener(new ActionListener() {

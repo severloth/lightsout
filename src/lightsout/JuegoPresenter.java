@@ -9,7 +9,7 @@ public class JuegoPresenter {
 		this.model = model;
 	}
 
-	public void switchEstados(Button b) {
+	public void switchEstados(Boton b) {
 		model.switchEstadoFila(b.getIndFila(), b.getIndColumna());
 		model.switchEstadoColumna(b.getIndFila(), b.getIndColumna());
 		model.switchEstadoBoton(b.getIndFila(), b.getIndColumna());
